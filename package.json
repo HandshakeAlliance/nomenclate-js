@@ -1,0 +1,26 @@
+{
+  "name": "nomenclate-js",
+  "version": "0.1.0",
+  "description": "Javascript bindings for Nomenclate",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HandshakeAlliance/nomenclate-js.git"
+  },
+  "author": "Handshake Alliance",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HandshakeAlliance/nomenclate-js/issues"
+  },
+  "homepage": "https://github.com/HandshakeAlliance/nomenclate-js#readme",
+  "dependencies": {
+    "bcurl": "^0.1.4",
+    "bsert": "0.0.5"
+  }
+}
