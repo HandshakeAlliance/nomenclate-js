@@ -1,6 +1,6 @@
 {
   "name": "nomenclate-js",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Javascript bindings for Nomenclate",
   "main": "lib/index.js",
   "directories": {
