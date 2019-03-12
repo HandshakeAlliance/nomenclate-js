@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "bmocha --reporter spec test/*.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "dependencies": {
     "bcurl": "^0.1.4",
     "bsert": "0.0.5"
+  },
+  "devDependencies": {
+    "bmocha": "^0.1.5"
   }
 }
