@@ -122,4 +122,72 @@ describe("Http Tests", function() {
     assert(result.pos);
     assert(result.block_height);
   });
+
+  it("should return tx hash by position", async () => {
+    let result = await client.getTransactionByPosition(9629, 1);
+
+    assert(result.hash);
+  });
+
+  it("should return tx hash and merkle proof by position", async () => {
+    let result = await client.getTransactionByPosition(9629, 1, true);
+
+    assert(result.tx_hash);
+    assert(result.merkle);
+  });
+
+  it("should return unspent by address", async () => {
+    let result = await client.listUnspent(
+      "ts1qxvf3qamm2gm0m3k72g3v9q65ft755ftm4yc85x"
+    );
+
+    assert(result.total >= 0);
+  });
+
+  it("should return history by address", async () => {
+    let result = await client.addressHistory(
+      "ts1qxvf3qamm2gm0m3k72g3v9q65ft755ftm4yc85x"
+    );
+
+    assert(result.total >= 0);
+  });
+
+  it("should return balance by address", async () => {
+    let result = await client.addressBalance(
+      "ts1qxvf3qamm2gm0m3k72g3v9q65ft755ftm4yc85x"
+    );
+
+    assert(result.confirmed >= 0);
+    assert(result.unconfirmed >= 0);
+  });
+
+  it("should return server banner", async () => {
+    let result = await client.banner();
+
+    assert(result.banner);
+  });
+
+  it("should return server features", async () => {
+    let result = await client.features();
+
+    assert(result.server_version);
+    assert(result.protocol_max);
+    assert(result.protocol_min);
+  });
+
+  it("should ping the server", async () => {
+    let result = await client.ping();
+  });
+
+  it("should return server version", async () => {
+    let version = await client.version();
+
+    assert(version);
+  });
+
+  it("should return name history", async () => {
+    let result = await client.getNameHistory("number");
+
+    assert(result.total);
+  });
 });
